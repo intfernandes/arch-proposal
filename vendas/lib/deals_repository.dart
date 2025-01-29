@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:design/design.dart';
 import 'package:vendas/deal.dart';
 
 export 'deal.dart';
@@ -35,6 +36,10 @@ class DealsRepository {
     );
 
     final result = await _dealsService.createDeal(deal.toMap());
+
+    if (result.isNotEmpty) {
+      Alerts.success('Sucesso', 'Negócio criado com sucesso');
+    }
 
     return Deal.fromMap(result);
   }

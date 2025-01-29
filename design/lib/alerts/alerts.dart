@@ -1,10 +1,11 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 class Alerts {
-  static void showSuccessDialog(
-      BuildContext context, String title, String message) {
+  static void success(String title, String message) {
+    if (AppRouter().navKey.currentContext == null) return;
     showDialog(
-      context: context,
+      context: AppRouter().navKey.currentContext!,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(title),
@@ -22,10 +23,11 @@ class Alerts {
     );
   }
 
-  static void showErrorDialog(
-      BuildContext context, String title, String message) {
+  static void error(String title, String message) {
+    if (AppRouter().navKey.currentContext == null) return;
+
     showDialog(
-      context: context,
+      context: AppRouter().navKey.currentContext!,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(title),
@@ -43,23 +45,24 @@ class Alerts {
     );
   }
 
-  static void showConfirmationDialog(
-      BuildContext context, String title, String message, Function onConfirm) {
+  static void confirm(String title, String message, Function onConfirm) {
+    if (AppRouter().navKey.currentContext == null) return;
+
     showDialog(
-      context: context,
+      context: AppRouter().navKey.currentContext!,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(title),
           content: Text(message),
           actions: [
             TextButton(
-              child: Text('CANCEL'),
+              child: Text('Cancel'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: Text('CONFIRM'),
+              child: Text('Confirm'),
               onPressed: () {
                 onConfirm();
                 Navigator.of(context).pop();

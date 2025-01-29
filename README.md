@@ -29,7 +29,7 @@ As `features` representam as delimitações de escopo de cada squad (produto, CR
 Apesar da divisão de features por squad, em um primeiro momento todo o projeto será colocado em um único reposirório git para evitar burocracias desnecessárias (criar vários pull-requests para uma pequena alteração)
 Porém, conforme os devs mobile migrarem para cada squad, esta arquitetura facilitará a criação de um repositório independente
 
-3 Estrutura:
+# Estrutura:
 
                  app_corretor, app_gerente, app_vendas, app_clientes
                                 |               |

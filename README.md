@@ -24,7 +24,7 @@ O módulo `design` centraliza os componentes de layout reutilizáveis em todos o
 
 As `features` representam as delimitações de escopo de cada squad (produto, CRM, vendas). Cada `feature` contém seus próprios modelos (dados), repositórios (lógica de acesso aos dados). Também poderão ser criados componentes de layout com suas próprias regras, visando seu reaproveitamento.  As `features` consomem os serviços do `core` e os componentes de layout do `design`.
 
-### 4. Observações
+# Observações
 
 Apesar da divisão de features por squad, em um primeiro momento todo o projeto será colocado em um único reposirório git para evitar burocracias desnecessárias (criar vários pull-requests para uma pequena alteração)
 Porém, conforme os devs mobile migrarem para cada squad, esta arquitetura facilitará a criação de um repositório independente
